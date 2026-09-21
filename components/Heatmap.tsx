@@ -3,11 +3,11 @@ import type { DayStat } from "@/lib/types";
 
 export function cellColor(percent: number): React.CSSProperties {
   if (percent < 0) {
-    return { backgroundColor: "transparent", border: "1px dashed #E8DFD3" };
+    return { backgroundColor: "transparent", border: "1px dashed #3A3742" };
   }
-  if (percent === 0) return { backgroundColor: "#F3EEE4" };
-  const alpha = 0.22 + (percent / 100) * 0.68;
-  return { backgroundColor: `rgba(63, 58, 54, ${alpha.toFixed(2)})` };
+  if (percent === 0) return { backgroundColor: "#2A2632" };
+  const alpha = 0.18 + (percent / 100) * 0.72;
+  return { backgroundColor: `rgba(245, 241, 235, ${alpha.toFixed(2)})` };
 }
 
 export function MonthGrid({
@@ -47,7 +47,7 @@ export function MonthGrid({
               title={d.percent >= 0 ? `${d.date}: ${d.percent}%` : d.date}
               className="flex aspect-square items-center justify-center rounded-lg text-[11px] font-bold text-ink transition-transform active:scale-90"
             >
-              <span style={{ opacity: d.percent >= 55 ? 0.9 : 0.7, color: d.percent >= 55 ? "#fff" : "#3F3A36" }}>
+              <span style={{ opacity: 0.95, color: d.percent >= 50 ? "#131118" : "#F5F1EB" }}>
                 {dayNum}
               </span>
             </button>

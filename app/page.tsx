@@ -145,7 +145,7 @@ export default function TodayPage() {
         </button>
       )}
 
-      <div className="mt-5 flex items-center gap-4 rounded-3xl bg-white px-5 py-4 shadow-card">
+      <div className="mt-5 flex items-center gap-4 rounded-3xl bg-card px-5 py-4 shadow-card">
         <ProgressRing percent={percent} label={`${completed}/${total}`} />
         <div className="flex-1">
           <p className="text-sm font-bold text-ink">

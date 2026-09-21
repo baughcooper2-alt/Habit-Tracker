@@ -72,7 +72,7 @@ export default function HabitForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl bg-white p-4 shadow-card">
+    <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl bg-card p-4 shadow-card">
       <div>
         <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-cocoa">
           Name

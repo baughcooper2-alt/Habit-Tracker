@@ -10,16 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#FBF8F3",
-        sand: "#F3EEE4",
-        blush: "#F7E4E4",
-        peach: "#FBE7D8",
-        mint: "#DFF0E8",
-        skytint: "#E1EEF6",
-        lilac: "#EBE3F5",
-        butter: "#FBF3D0",
-        ink: "#3F3A36",
-        cocoa: "#8A7F76",
+        cream: "#131118",
+        sand: "#2A2632",
+        card: "#1E1B24",
+        blush: "#2A1A1E",
+        peach: "#2A2015",
+        mint: "#152420",
+        skytint: "#182530",
+        lilac: "#211A2C",
+        butter: "#2A2415",
+        ink: "#F5F1EB",
+        cocoa: "#A79FB0",
       },
       fontFamily: {
         sans: [

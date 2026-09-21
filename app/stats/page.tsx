@@ -116,7 +116,7 @@ export default function StatsPage() {
                   value={monthData.bestDay ? `${monthData.bestDay.percent}%` : "–"}
                 />
               </div>
-              <div className="mt-4 rounded-3xl bg-white p-4 shadow-card">
+              <div className="mt-4 rounded-3xl bg-card p-4 shadow-card">
                 <MonthGrid year={now.y} month={now.m} days={monthData.days} />
               </div>
             </>
@@ -149,10 +149,10 @@ export default function StatsPage() {
               <div className="mt-4 flex gap-3">
                 <StatPill label="Average" value={`${yearData.averagePercent}%`} />
               </div>
-              <div className="mt-4 rounded-3xl bg-white p-4 shadow-card">
+              <div className="mt-4 rounded-3xl bg-card p-4 shadow-card">
                 <MonthBars months={yearData.months} />
               </div>
-              <div className="mt-4 rounded-3xl bg-white p-4 shadow-card">
+              <div className="mt-4 rounded-3xl bg-card p-4 shadow-card">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wide text-cocoa">
                   Every day this year
                 </p>
@@ -173,7 +173,7 @@ export default function StatsPage() {
 
 function StatPill({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex-1 rounded-2xl bg-white px-4 py-3 text-center shadow-soft">
+    <div className="flex-1 rounded-2xl bg-card px-4 py-3 text-center shadow-soft">
       <p className="text-lg font-extrabold text-ink">{value}</p>
       <p className="text-[10px] font-semibold uppercase tracking-wide text-cocoa">{label}</p>
     </div>

@@ -18,7 +18,7 @@ export default function StreakList({
         return (
           <div
             key={h.id}
-            className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-soft"
+            className="flex items-center gap-3 rounded-2xl bg-card px-4 py-3 shadow-soft"
           >
             <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${theme.soft} text-lg`}>
               {h.icon}

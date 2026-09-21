@@ -118,7 +118,7 @@ export default function HabitsPage() {
               {habits.map((h, i) => {
                 const theme = colorTheme(h.color);
                 return (
-                  <div key={h.id} className="rounded-2xl bg-white px-4 py-3 shadow-soft">
+                  <div key={h.id} className="rounded-2xl bg-card px-4 py-3 shadow-soft">
                     <div className="flex items-center gap-3">
                       <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${theme.soft} text-xl`}>
                         {h.icon}
@@ -188,21 +188,21 @@ export default function HabitsPage() {
                       key={h.id}
                       className="flex items-center gap-3 rounded-2xl bg-sand/60 px-4 py-3"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/70 text-lg opacity-60">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-lg opacity-60">
                         {h.icon}
                       </span>
                       <p className="flex-1 text-sm font-bold text-cocoa">{h.name}</p>
                       <button
                         type="button"
                         onClick={() => handleArchive(h.id, false)}
-                        className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-ink"
+                        className="rounded-full bg-sand px-3 py-1.5 text-xs font-bold text-ink"
                       >
                         Restore
                       </button>
                       <button
                         type="button"
                         onClick={() => handleDelete(h.id)}
-                        className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-rose-600"
+                        className="rounded-full bg-sand px-3 py-1.5 text-xs font-bold text-rose-400"
                       >
                         Delete
                       </button>

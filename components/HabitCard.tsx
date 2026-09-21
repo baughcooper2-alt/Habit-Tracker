@@ -34,7 +34,7 @@ export default function HabitCard({
       >
         <span
           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xl ${
-            done ? "bg-white/25" : "bg-white/70"
+            done ? "bg-white/25" : "bg-white/10"
           }`}
         >
           {habit.icon}
@@ -97,14 +97,14 @@ function QuantityCard({
   return (
     <div className={`rounded-2xl border border-transparent ${theme.soft} px-4 py-3.5 shadow-soft`}>
       <div className="flex items-center gap-3.5">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/70 text-xl">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-xl">
           {habit.icon}
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-2">
             <span className="text-[15px] font-bold text-ink">{habit.name}</span>
             {met && (
-              <span className="text-xs font-bold text-emerald-600">✓ goal met</span>
+              <span className="text-xs font-bold text-emerald-400">✓ goal met</span>
             )}
           </div>
           {editing ? (
@@ -117,7 +117,7 @@ function QuantityCard({
                 onChange={(e) => setDraft(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && commitEdit()}
                 onBlur={commitEdit}
-                className="w-20 rounded-lg border border-cocoa/20 bg-white px-2 py-1 text-sm font-semibold text-ink outline-none focus:border-ink/40"
+                className="w-20 rounded-lg border border-cocoa/20 bg-black/25 px-2 py-1 text-sm font-semibold text-ink outline-none focus:border-ink/40"
               />
               <span className="text-xs font-medium text-cocoa">{habit.unit}</span>
             </div>
@@ -139,7 +139,7 @@ function QuantityCard({
       <ProgressBar
         percent={percent}
         className="mt-3"
-        trackClassName="bg-white/60"
+        trackClassName="bg-white/15"
         fillClassName={theme.accent}
       />
 
@@ -149,7 +149,7 @@ function QuantityCard({
             key={amt}
             type="button"
             onClick={() => onIncrement(amt)}
-            className="rounded-full bg-white/80 px-3 py-1 text-xs font-bold text-ink shadow-sm active:scale-95"
+            className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-ink shadow-sm active:scale-95"
           >
             +{amt}
           </button>
@@ -158,7 +158,7 @@ function QuantityCard({
           <button
             type="button"
             onClick={() => onIncrement(-Math.min(value, habit.quickAdds[0] ?? value))}
-            className="rounded-full bg-white/50 px-3 py-1 text-xs font-bold text-cocoa active:scale-95"
+            className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-cocoa active:scale-95"
           >
             −{habit.quickAdds[0] ?? value}
           </button>
