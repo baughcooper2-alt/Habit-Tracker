@@ -66,32 +66,22 @@ have free tiers and take about 10 minutes total.
    your `DIRECT_URL`. (Neon shows both; if your provider only gives you one,
    use the same value for both variables.)
 
-### 2. Push this code to GitHub
+### 2. Deploy to Vercel
 
-If it isn't already, push this repository to a GitHub repo you own.
-
-### 3. Deploy to Vercel
-
-1. Go to [vercel.com/new](https://vercel.com/new) and import the GitHub repo.
+1. Go to [vercel.com/new](https://vercel.com/new) and import the
+   `baughcooper2-alt/Habit-Tracker` GitHub repo.
 2. Under **Environment Variables**, add:
    - `DATABASE_URL` — the pooled Neon connection string
    - `DIRECT_URL` — the direct Neon connection string
 3. Click **Deploy**.
 
-### 4. Create the database tables
+That's it — the build itself creates the database tables and adds the
+starter habits (School Work, LSAT, Gym, Water, Calories, Protein, Fat) the
+first time it runs against an empty database. Later deploys just redeploy
+the app; the seed step no-ops once habits already exist, and the schema
+push only changes anything if `prisma/schema.prisma` changed.
 
-After the first deploy, run the schema push once against your production
-database. From your machine (with `.env` pointed at the Neon URLs):
-
-```bash
-npx prisma db push
-npm run db:seed   # optional — adds the starter habits
-```
-
-(You only need to do this once. Future deploys just redeploy the app; the
-schema doesn't need to be re-pushed unless you change `prisma/schema.prisma`.)
-
-### 5. Open it on your phone and laptop
+### 3. Open it on your phone and laptop
 
 Visit your `*.vercel.app` URL (or a custom domain, if you add one in Vercel's
 project settings) on both devices.
