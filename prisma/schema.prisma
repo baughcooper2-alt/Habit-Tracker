@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum HabitType {
+  BOOLEAN
+  QUANTITY
+}
+
+model Habit {
+  id         String    @id @default(cuid())
+  name       String
+  icon       String    @default("✨")
+  color      String    @default("sky")
+  type       HabitType @default(BOOLEAN)
+  unit       String?
+  target     Float     @default(1)
+  quickAdds  String? // comma separated increments, e.g. "8,16,24"
+  sortOrder  Int       @default(0)
+  archived   Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  entries    Entry[]
+
+  @@index([archived, sortOrder])
+}
+
+model Entry {
+  id        String   @id @default(cuid())
+  habitId   String
+  habit     Habit    @relation(fields: [habitId], references: [id], onDelete: Cascade)
+  date      DateTime // stored as local-day date at UTC midnight, e.g. 2026-09-21T00:00:00Z
+  value     Float    @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([habitId, date])
+  @@index([date])
+}
