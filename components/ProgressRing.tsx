@@ -39,8 +39,12 @@ export default function ProgressRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-lg font-extrabold text-ink">{clamped}%</span>
-        {label && <span className="text-[10px] font-semibold text-cocoa">{label}</span>}
+        <span className={`font-extrabold text-ink ${size <= 60 ? "text-sm" : "text-lg"}`}>
+          {clamped}%
+        </span>
+        {label && size > 60 && (
+          <span className="text-[10px] font-semibold text-cocoa">{label}</span>
+        )}
       </div>
     </div>
   );

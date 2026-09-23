@@ -109,8 +109,8 @@ export default function TodayPage() {
     <div className="animate-fadein">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-semibold text-cocoa">{formatHeaderDate(date, today)}</p>
-          <h1 className="text-2xl font-extrabold text-ink">
+          <p className="text-xs font-semibold text-cocoa">{formatHeaderDate(date, today)}</p>
+          <h1 className="text-lg font-extrabold text-ink">
             {total > 0 && percent === 100 ? "All done! 🎉" : "Let's get it done"}
           </h1>
         </div>
@@ -145,8 +145,8 @@ export default function TodayPage() {
         </button>
       )}
 
-      <div className="mt-5 flex items-center gap-4 rounded-3xl bg-card px-5 py-4 shadow-card">
-        <ProgressRing percent={percent} label={`${completed}/${total}`} />
+      <div className="mt-3 flex items-center gap-3 rounded-2xl bg-card px-4 py-3 shadow-card">
+        <ProgressRing percent={percent} label={`${completed}/${total}`} size={56} stroke={6} />
         <div className="flex-1">
           <p className="text-sm font-bold text-ink">
             {total === 0
@@ -155,7 +155,7 @@ export default function TodayPage() {
               ? "Every habit checked off."
               : `${total - completed} habit${total - completed === 1 ? "" : "s"} left`}
           </p>
-          <p className="mt-0.5 text-xs text-cocoa">
+          <p className="mt-0.5 text-[11px] text-cocoa">
             {total === 0
               ? "Add your first habit to get started."
               : "Progress updates the moment you log something."}
@@ -170,9 +170,9 @@ export default function TodayPage() {
       )}
 
       {loading && !habits && (
-        <div className="mt-5 space-y-3">
+        <div className="mt-4 space-y-2">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="h-16 animate-pulse rounded-2xl bg-sand" />
+            <div key={i} className="h-12 animate-pulse rounded-xl bg-sand" />
           ))}
         </div>
       )}
@@ -194,7 +194,7 @@ export default function TodayPage() {
       )}
 
       {habits && habits.length > 0 && (
-        <div className="mt-5 space-y-2.5">
+        <div className="mt-4 space-y-2">
           {habits.map((h) => (
             <HabitCard
               key={h.id}
